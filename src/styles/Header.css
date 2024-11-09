@@ -4,7 +4,9 @@
   align-items: center;
   background-color: black;
 
-  width: 100vw;
+  height: 20vh;
+
+  /* width: 100vw; */
 }
 
 .leftHeader{
@@ -12,11 +14,13 @@
   justify-content: center;
   align-items: center;
   background-color: black;
+
+  height: 20vh;
 }
 
 
 .logo {
-    height: 10em;
+    height: 6em;
     padding: 1.5em;
     will-change: filter;
     transition: filter 300ms;

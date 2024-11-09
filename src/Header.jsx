@@ -6,7 +6,7 @@ function Header(){
         <>
         <div className="header">
           <div className="leftHeader">
-          <a href="https://react.dev" target="_blank">
+          <a href="https://youtu.be/dQw4w9WgXcQ?si=uocC4qU8WZA5_1Ec" target="_blank">
           <img src={brainLogo} className="logo react" alt="React logo" />
         </a>
         <h1>

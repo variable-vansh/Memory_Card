@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './styles/SingleCard.css'
 
 function SingleCard({ id }) {
   const [pokeData, setPokeData] = useState(null);
@@ -20,7 +21,7 @@ function SingleCard({ id }) {
   }
 
   return (
-    <div>
+    <div className='singleCard'>
       <h3>{pokeData.name}</h3>
       <img src={pokeData.imageLink} alt={pokeData.name} />
     </div>

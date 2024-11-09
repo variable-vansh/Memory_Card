@@ -1,0 +1,19 @@
+.singleCard{
+    background-color: #415a77;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 75%;
+    width: 75%;
+
+    align-self: center;
+    justify-self: center;
+}
+
+.singleCard>img{
+    height: 110%;
+    /* width: 100%; */
+}

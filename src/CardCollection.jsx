@@ -1,4 +1,5 @@
 import SingleCard from "./SingleCard";
+import './styles/CardCollection.css'
 
 function CardCollection() {
     // Generate random 8 numbers
@@ -6,12 +7,13 @@ function CardCollection() {
   
     return (
       <>
+      <div className="cardsCollection">
       {
         randomEightNumbers.map((number, index)=>(
             <SingleCard key={index} id={number}/>
         ))
       }
-      
+      </div>
       </>
     );
   }
@@ -19,7 +21,12 @@ function CardCollection() {
   function random8Numbers() {
     let randomEightArr = [];
     for (let i = 0; i < 8; i++) {
-      randomEightArr.push(Math.floor(Math.random() * 1026));
+      let RandomNum=Math.ceil(Math.random() * 500)
+      if(randomEightArr.includes(RandomNum)){
+        i--;
+        continue;
+      }
+      randomEightArr.push(RandomNum);
     }
     return randomEightArr;
   }
