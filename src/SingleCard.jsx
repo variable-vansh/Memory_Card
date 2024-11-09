@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import './styles/SingleCard.css'
 
-function SingleCard({ id }) {
+function SingleCard({ id, handleClick, idArr }) {
   const [pokeData, setPokeData] = useState(null);
+  const [isLoaded, setIsLoaded]=useState(false)
 
   useEffect(() => {
     async function fetchPokeData() {
@@ -14,14 +15,14 @@ function SingleCard({ id }) {
       });
     }
     fetchPokeData();
-  }, [id]);
+  }, []);
 
   if (!pokeData) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className='singleCard'>
+    <div className='singleCard' onClick={handleClick}>
       <h3>{pokeData.name}</h3>
       <img src={pokeData.imageLink} alt={pokeData.name} />
     </div>

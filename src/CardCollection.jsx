@@ -1,42 +1,61 @@
 import SingleCard from "./SingleCard";
+import { useState, useEffect} from "react";
 import './styles/CardCollection.css'
 
+
+
 function CardCollection() {
-    // Generate random 8 numbers
-    const randomEightNumbers = random8Numbers();
-  
-    return (
-      <>
+
+  const [numbers, setNumbers]=useState(random8Numbers())
+
+  const handleClick = (number) => {
+    console.log(`${number} clicked`)
+    setNumbers(shuffle([...numbers]))
+  };
+
+
+  return (
+    <>
       <div className="cardsCollection">
-      {
-        randomEightNumbers.map((number, index)=>(
-            <SingleCard key={index} id={number}/>
-        ))
-      }
+        {
+          numbers.map((number)=>(
+            <SingleCard key={number} id={number} handleClick={ ()=>handleClick(number)}/>
+          ))
+        }
       </div>
-      </>
-    );
-  }
-  
-  function random8Numbers() {
-    let randomEightArr = [];
-    for (let i = 0; i < 8; i++) {
-      let RandomNum=Math.ceil(Math.random() * 500)
-      if(randomEightArr.includes(RandomNum)){
-        i--;
-        continue;
-      }
-      randomEightArr.push(RandomNum);
+    </>
+  );
+}
+
+function random8Numbers() {
+  let randomEightArr = [];
+  for (let i = 0; i < 8; i++) {
+    let RandomNum=Math.ceil(Math.random() * 500)
+    if(randomEightArr.includes(RandomNum)){
+      i--;
+      continue;
     }
-    return randomEightArr;
+    randomEightArr.push(RandomNum);
   }
-  
-//   async function getPokeData(id){
-//     const response=await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`,{mode:'cors'})
-//     let pokeData= await response.json();
-//     //name
-//     console.log(pokeData.name)
-//     //image link
-//     console.log(pokeData.sprites.front_shiny)
-//   }
-  export default CardCollection;
+  return randomEightArr;
+}
+
+// Fisher–Yates shuffle
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return(array)
+}
+
+export default CardCollection;

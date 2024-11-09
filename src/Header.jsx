@@ -14,8 +14,8 @@ function Header(){
         </h1>
           </div>
        
-        <h2>Score</h2>
-        <h2>High Score</h2>
+        {/* <h2>Rules</h2>
+        <h2>Scores</h2> */}
         </div>
         </>
     )
