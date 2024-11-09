@@ -44,3 +44,10 @@
       animation: logo-spin infinite 30s linear;
     }
   }
+
+.scoreBox{
+  text-align: center;
+  background-color: rgb(36,36,36);
+  border-radius: 5px;
+}
+

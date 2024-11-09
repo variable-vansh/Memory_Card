@@ -1,7 +1,8 @@
 import brainLogo from './assets/brain-svgrepo-com.svg'
+import ScoreCard from './ScoreCard'
 import './styles/Header.css'
 
-function Header(){
+function Header({score, highScore}){
     return(
         <>
         <div className="header">
@@ -14,6 +15,7 @@ function Header(){
         </h1>
           </div>
        
+        <ScoreCard score={score} highScore={highScore}/>
         {/* <h2>Rules</h2>
         <h2>Scores</h2> */}
         </div>

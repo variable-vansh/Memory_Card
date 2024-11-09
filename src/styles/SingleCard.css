@@ -23,14 +23,15 @@
     background-color: #587aa1d4;
   }
 
+.singleCard:active{
+  background-color: rgba(201, 153, 63, 0.701);
+}
 
 .singleCard {
-    transition: all 0.5s ease-in-out;
-    opacity: 1;
-    transform: translateY(20px);
+    transition: all 0.4s ease-in;
   }
-  
-  .singleCard.loaded {
-    opacity: 1;
-    transform: translateY(0);
+
+  .loading{
+    align-self: center;
+    justify-self: center;
   }
