@@ -1,7 +1,6 @@
+import './styles/scoreCard.css'
 
 function ScoreCard({score, highScore}){
-   
-
     return(
         <div className='scoreBox'>
         <label htmlFor="score">SCORE</label>

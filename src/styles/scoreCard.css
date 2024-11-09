@@ -1,0 +1,10 @@
+.scoreBox{
+    padding:10px 20px;
+    margin: 0px 10px;
+
+    /* font-size: 15px; */
+}
+
+.scoreBox>div{
+    font-size: 17px;
+}

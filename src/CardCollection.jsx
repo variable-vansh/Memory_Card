@@ -25,6 +25,9 @@ function CardCollection({score, highScore, setScore, sethighScore}) {
       // Shuffle existing cards
       setNumbers(shuffle([...numbers]));
     }
+    if(score==8){
+      alert("bas kar pagle, rulayega kya?")
+    }
   };
 
   return (
